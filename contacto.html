@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelízate | Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-file-earmark-excel-fill text-success me-2"></i> 
+                <span style="font-family: 'Poppins', sans-serif;">Excelízate</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link hover-effect" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button id="darkModeToggle" class="btn btn-sm btn-outline-dark me-2">
+                        <i class="bi bi-moon-fill"></i> Modo Oscuro
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        <i class="bi bi-shield-lock"></i> Privacidad
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5"><i class="bi bi-envelope-paper text-success me-2"></i>Contacto</h1>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2>Información de Contacto</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="bi bi-geo-alt-fill text-success me-2"></i> Dirección: Av. John F Kennedy, Santo Domingo, Distrito Nacional</li>
+                            <li class="mb-3"><i class="bi bi-telephone-fill text-success me-2"></i> Teléfono: (849) 750-2039</li>
+                            <li class="mb-3"><i class="bi bi-envelope-fill text-success me-2"></i> Email: jemd@excelizate.com</li>
+                            <li class="mb-3"><i class="bi bi-clock-fill text-success me-2"></i> Horario: Lunes a Viernes, 8:00 - 17:00</li>
+                        </ul>
+                        <h3 class="mt-4">Redes Sociales</h3>
+                        <div class="d-flex">
+                            <a href="#" class="text-dark social-icon me-3"><i class="bi bi-facebook fs-3"></i></a>
+                            <a href="#" class="text-dark social-icon me-3"><i class="bi bi-twitter fs-3"></i></a>
+                            <a href="#" class="text-dark social-icon me-3"><i class="bi bi-instagram fs-3"></i></a>
+                            <a href="#" class="text-dark social-icon"><i class="bi bi-youtube fs-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2>Formulario de Contacto</h2>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Asunto</label>
+                                <select class="form-select">
+                                    <option>Consulta sobre cursos</option>
+                                    <option>Soporte técnico</option>
+                                    <option>Información general</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <textarea class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="bi bi-send me-2"></i>Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Excelízate</h5>
+                    <p>Curso profesional desde cero hasta nivel avanzado.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white hover-effect">Inicio</a></li>
+                        <li class="mb-2"><a href="noticias.html" class="text-white hover-effect">Noticias</a></li>
+                        <li class="mb-2"><a href="recursos.html" class="text-white hover-effect">Recursos</a></li>
+                        <li><a href="contacto.html" class="text-white hover-effect">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Redes sociales</h5>
+                    <div class="mb-3">
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2025 Excelízate - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

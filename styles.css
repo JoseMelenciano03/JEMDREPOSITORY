@@ -1,0 +1,123 @@
+:root {
+    --excel-green: #217346;
+    --excel-dark: #165a36;
+    --excel-light: #e7f5ee;
+    --dark-bg: #121212;
+    --dark-card: #2d2d2d;
+    --dark-text: #f1f1f1;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .navbar {
+    background-color: var(--dark-card) !important;
+    border-bottom: 3px solid var(--excel-dark);
+}
+
+body.dark-mode .card {
+    background-color: var(--dark-card);
+    color: var(--dark-text);
+}
+
+body.dark-mode .accordion-button {
+    background-color: var(--dark-card);
+    color: var(--dark-text);
+}
+
+body.dark-mode .form-control {
+    background-color: #333;
+    color: var(--dark-text);
+    border-color: #555;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #444;
+    color: var(--dark-text);
+}
+
+body.dark-mode .bg-light {
+    background-color: #333 !important;
+}
+
+body.dark-mode code {
+    background-color: #444;
+    color: #f8f9fa;
+}
+
+.navbar {
+    border-bottom: 3px solid var(--excel-green);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--excel-green), var(--excel-dark));
+    padding: 5rem 0;
+}
+
+.card-function {
+    border-left: 4px solid var(--excel-green);
+    transition: all 0.3s;
+}
+
+.card-function:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.btn-excel {
+    background-color: var(--excel-green);
+    color: white;
+}
+
+.btn-excel:hover {
+    background-color: var(--excel-dark);
+    color: white;
+}
+
+.hover-effect:hover {
+    color: var(--excel-green) !important;
+    transform: scale(1.05);
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--excel-green) !important;
+    transform: translateY(-3px);
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.privacy-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.news-card {
+    transition: all 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}

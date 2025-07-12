@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelízate | Noticias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-file-earmark-excel-fill text-success me-2"></i> 
+                <span style="font-family: 'Poppins', sans-serif;">Excelízate</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link hover-effect" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button id="darkModeToggle" class="btn btn-sm btn-outline-dark me-2">
+                        <i class="bi bi-moon-fill"></i> Modo Oscuro
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        <i class="bi bi-shield-lock"></i> Privacidad
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5"><i class="bi bi-newspaper text-success me-2"></i>Últimas Noticias sobre Excel</h1>
+        
+        <article class="mb-5" id="articulo1">
+            <div class="card">
+                <img src="https://static.wixstatic.com/media/b28f10_52174cf0c59e42b78a14b48e7f241b9e~mv2.jpg/v1/fill/w_1200,h_1200,al_c/b28f10_52174cf0c59e42b78a14b48e7f241b9e~mv2.jpg" class="card-img-top" alt="Errores comunes">
+                <div class="card-body">
+                    <h2>Errores comunes al usar Excel y cómo evitarlos</h2>
+                    <p class="text-muted">Publicado el 07 de julio, 2025</p>
+                    <div class="content">
+                        <p>Los usuarios de Excel frecuentemente cometen estos errores que pueden afectar su productividad y la precisión de sus datos:</p>
+                        <ol>
+                            <li><strong>Usar números como encabezados de columna:</strong> Esto puede causar problemas con las referencias y fórmulas.</li>
+                            <li><strong>No usar tablas Excel:</strong> Las tablas ofrecen muchas ventajas como formato automático y fórmulas estructuradas.</li>
+                            <li><strong>No validar datos:</strong> La validación previene errores en la entrada de información.</li>
+                        </ol>
+                        <p>Soluciones profesionales:</p>
+                        <ul>
+                            <li>Usar encabezados descriptivos en texto</li>
+                            <li>Convertir rangos a tablas (Ctrl+T)</li>
+                            <li>Implementar validación de datos</li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="btn btn-success mt-3">Volver al inicio</a>
+                </div>
+            </div>
+        </article>
+        
+        <article class="mb-5" id="articulo2">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.4b3d76af7cafa644a2c7bee69baddbd9?rik=pDEALWA2kKgXMQ&pid=ImgRaw&r=0" class="card-img-top" alt="Optimización">
+                <div class="card-body">
+                    <h2>Optimiza tu productividad con estos trucos de Excel</h2>
+                    <p class="text-muted">Publicado el 06 de julio, 2025</p>
+                    <div class="content">
+                        <p>Trucos avanzados para usuarios intermedios:</p>
+                        <ul>
+                            <li>Atajos de teclado esenciales (Alt para acceder a la cinta)</li>
+                            <li>Uso de nombres definidos para fórmulas complejas</li>
+                            <li>Formatos condicionales avanzados</li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="btn btn-success mt-3">Volver al inicio</a>
+                </div>
+            </div>
+        </article>
+        
+        <article id="articulo3">
+            <div class="card">
+                <img src="https://www.semanalnews.com/wp-content/uploads/2023/10/image-4-1024x576.png" class="card-img-top" alt="Novedades 2025">
+                <div class="card-body">
+                    <h2>Novedades en Excel 2025</h2>
+                    <p class="text-muted">Publicado el 5 de julio, 2025</p>
+                    <div class="content">
+                        <p>Las principales novedades incluyen:</p>
+                        <ul>
+                            <li>Nuevas funciones de inteligencia artificial</li>
+                            <li>Integración mejorada con Power BI</li>
+                            <li>Herramientas de colaboración en tiempo real</li>
+                        </ul>
+                    </div>
+                    <a href="index.html" class="btn btn-success mt-3">Volver al inicio</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-white py-4 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Excelízate</h5>
+                    <p>Curso profesional desde cero hasta nivel avanzado.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white hover-effect">Inicio</a></li>
+                        <li class="mb-2"><a href="noticias.html" class="text-white hover-effect">Noticias</a></li>
+                        <li class="mb-2"><a href="recursos.html" class="text-white hover-effect">Recursos</a></li>
+                        <li><a href="contacto.html" class="text-white hover-effect">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Redes sociales</h5>
+                    <div class="mb-3">
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2025 Excelízate - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

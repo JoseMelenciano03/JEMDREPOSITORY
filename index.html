@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curso completo de Excel profesional con tres niveles de aprendizaje">
+    <meta name="keywords" content="Excel, curso Excel, fórmulas, tablas dinámicas, VBA">
+    <meta name="author" content="Excel Master">
+    <meta name="robots" content="index, follow">
+    <title>Excelízate | Curso Completo</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --excel-green: #217346;
+            --excel-dark: #165a36;
+            --excel-light: #e7f5ee;
+            --dark-bg: #121212;
+            --dark-card: #2d2d2d;
+            --dark-text: #f1f1f1;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.4s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Modo oscuro */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        body.dark-mode .navbar {
+            background-color: var(--dark-card) !important;
+            border-bottom: 3px solid var(--excel-dark);
+        }
+        body.dark-mode .card {
+            background-color: var(--dark-card);
+            color: var(--dark-text);
+        }
+        body.dark-mode .accordion-button {
+            background-color: var(--dark-card);
+            color: var(--dark-text);
+        }
+        body.dark-mode .form-control {
+            background-color: #333;
+            color: var(--dark-text);
+            border-color: #f8f9fa;
+        }
+        body.dark-mode .form-control:focus {
+            background-color: #444;
+            color: var(--dark-text);
+        }
+        body.dark-mode .bg-light {
+            background-color: #333 !important;
+        }
+        body.dark-mode code {
+            background-color: #444;
+            color: #f8f9fa;
+        }
+
+        /* Estilos generales */
+        .navbar {
+            border-bottom: 3px solid var(--excel-green);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, var(--excel-green), var(--excel-dark));
+            padding: 5rem 0;
+        }
+        .card-function {
+            border-left: 4px solid var(--excel-green);
+            transition: all 0.3s;
+        }
+        .card-function:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .btn-excel {
+            background-color: var(--excel-green);
+            color: white;
+        }
+        .btn-excel:hover {
+            background-color: var(--excel-dark);
+            color: white;
+        }
+        .hover-effect:hover {
+            color: var(--excel-green) !important;
+            transform: scale(1.05);
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        .social-icon:hover {
+            color: var(--excel-green) !important;
+            transform: translateY(-3px);
+        }
+        .footer {
+            margin-top: auto;
+        }
+        .privacy-link {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .news-card {
+            transition: all 0.3s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-file-earmark-excel-fill text-success me-2"></i> 
+                <span style="font-family: 'Poppins', sans-serif;">Excelízate</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link hover-effect" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="#basico">Básico</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="#intermedio">Intermedio</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="#avanzado">Avanzado</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link hover-effect" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button id="darkModeToggle" class="btn btn-sm btn-outline-dark me-2">
+                        <i class="bi bi-moon-fill"></i> Modo Oscuro
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                        <i class="bi bi-shield-lock"></i> Privacidad
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero-section text-white py-5" id="inicio">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4" style="font-family: 'Poppins', sans-serif;">Domina Excel en 3 Niveles</h1>
+            <p class="lead fs-4">Desde fórmulas básicas hasta automatización con macros y Power Query</p>
+            <div class="mt-4">
+                <button class="btn btn-light btn-lg me-2" data-bs-toggle="modal" data-bs-target="#introModal">
+                    <i class="bi bi-play-circle"></i> Ver introducción
+                </button>
+                <a href="#basico" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-arrow-down"></i> Comenzar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrusel -->
+    <section class="container my-5">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner rounded-3 overflow-hidden shadow">
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center h-100" style="background-color: #e7f5ee;">
+                        <div class="text-center p-4">
+                            <i class="bi bi-calculator-fill display-1 text-success"></i>
+                            <h3>Nivel Básico</h3>
+                            <p>Funciones esenciales y formatos</p>
+                            <a href="#basico" class="btn btn-success">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100" style="background-color: #d4edda;">
+                        <div class="text-center p-4">
+                            <i class="bi bi-table display-1 text-success"></i>
+                            <h3>Nivel Intermedio</h3>
+                            <p>Tablas dinámicas y funciones avanzadas</p>
+                            <a href="#intermedio" class="btn btn-success">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100" style="background-color: #c3e6cb;">
+                        <div class="text-center p-4">
+                            <i class="bi bi-gear-fill display-1 text-success"></i>
+                            <h3>Nivel Avanzado</h3>
+                            <p>Macros y Power Query</p>
+                            <a href="#avanzado" class="btn btn-success">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Nivel Básico -->
+    <section class="container my-5" id="basico">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-1-circle-fill text-success me-2"></i> Nivel Básico</h2>
+            <button class="btn btn-outline-success" onclick="showDetails('basicDetails')">Ver detalles completos</button>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=SUMA()</h3>
+                        <p>Suma todos los números en un rango de celdas.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=SUMA(A1:A10)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=PROMEDIO()</h3>
+                        <p>Calcula la media aritmética de un conjunto de valores.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=PROMEDIO(B2:B20)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=MAX() / =MIN()</h3>
+                        <p>Encuentra el valor máximo o mínimo en un rango.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=MAX(C1:C100)</code><br>
+                            <code>=MIN(C1:C100)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=CONTAR()</h3>
+                        <p>Cuenta la cantidad de celdas con números en un rango.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=CONTAR(D1:D50)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="basicDetails" class="mt-4 d-none">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="fw-bold">Conceptos fundamentales:</h4>
+                    <ol class="fs-5">
+                        <li>Introducción a la interfaz de Excel</li>
+                        <li>Formatos básicos de celdas (números, fechas, texto)</li>
+                        <li>10 funciones esenciales para empezar</li>
+                        <li>Creación y formato de tablas básicas</li>
+                        <li>Gráficos simples (barras, líneas, pastel)</li>
+                        <li>Impresión y configuración de página</li>
+                    </ol>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-lightbulb-fill me-2"></i>
+                        <strong>Tip profesional:</strong> Usa F2 para editar celdas rápidamente y Ctrl+Enter para confirmar cambios sin moverte de la celda.
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#basicVideoModal">
+                            <i class="bi bi-play-circle me-2"></i>Ver video demostrativo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nivel Intermedio -->
+    <section class="container my-5" id="intermedio">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-2-circle-fill text-success me-2"></i> Nivel Intermedio</h2>
+            <button class="btn btn-outline-success" onclick="showDetails('intermediateDetails')">Ver detalles completos</button>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=BUSCARV()</h3>
+                        <p>Búsqueda vertical en tablas (Excel tradicional).</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=BUSCARV(valor, rango, columna, FALSO)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=X.BUSCAR()</h3>
+                        <p>Búsqueda moderna (versiones recientes de Excel).</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=X.BUSCAR(valor, rango_busqueda, rango_resultado)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=SI()</h3>
+                        <p>Evaluaciones condicionales básicas.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=SI(condición, valor_si_verdadero, valor_si_falso)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">=SI.CONJUNTO()</h3>
+                        <p>Múltiples condiciones en una sola función.</p>
+                        <div class="bg-light p-2 rounded mb-3">
+                            <code>=SI.CONJUNTO(condición1, resultado1, condición2, resultado2, ...)</code>
+                        </div>
+                        <button class="btn btn-sm btn-success copiar-btn">
+                            <i class="bi bi-clipboard"></i> Copiar fórmula
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detalles ocultos -->
+        <div id="intermediateDetails" class="mt-4 d-none">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="fw-bold">Temas cubiertos:</h4>
+                    <ul class="fs-5">
+                        <li>Validación de datos (listas desplegables, restricciones)</li>
+                        <li>Formatos condicionales avanzados</li>
+                        <li>Tablas dinámicas básicas e intermedias</li>
+                        <li>Funciones de búsqueda y referencia</li>
+                        <li>Protección de hojas y libros</li>
+                        <li>Gráficos dinámicos y dashboards básicos</li>
+                    </ul>
+                    <div class="alert alert-warning mt-3">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Importante:</strong> Las funciones BUSCARV y X.BUSCAR requieren que los datos estén ordenados correctamente para funcionar.
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pivotModal">
+                            <i class="bi bi-table me-2"></i>Ver ejemplo de tabla dinámica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nivel Avanzado -->
+    <section class="container my-5" id="avanzado">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-3-circle-fill text-success me-2"></i> Nivel Avanzado</h2>
+            <button class="btn btn-outline-success" onclick="showDetails('advancedDetails')">Ver detalles completos</button>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">Macros (VBA)</h3>
+                        <p>Automatización de tareas repetitivas con Visual Basic for Applications.</p>
+                        <ul class="mt-2">
+                            <li>Grabadora de macros</li>
+                            <li>Edición de código VBA</li>
+                            <li>Creación de funciones personalizadas</li>
+                        </ul>
+                        <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#macroModal">
+                            <i class="bi bi-code-slash me-2"></i>Ver ejemplo
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">Power Query</h3>
+                        <p>Transformación avanzada de datos y ETL (Extract, Transform, Load).</p>
+                        <ul class="mt-2">
+                            <li>Importación de múltiples fuentes</li>
+                            <li>Limpieza y transformación de datos</li>
+                            <li>Automatización de procesos ETL</li>
+                        </ul>
+                        <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#powerQueryModal">
+                            <i class="bi bi-database me-2"></i>Ver demostración
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">Power Pivot</h3>
+                        <p>Modelado de datos avanzado y DAX (Data Analysis Expressions).</p>
+                        <ul class="mt-2">
+                            <li>Relaciones entre tablas</li>
+                            <li>Medidas calculadas</li>
+                            <li>Análisis de grandes volúmenes de datos</li>
+                        </ul>
+                        <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#powerPivotModal">
+                            <i class="bi bi-diagram-3 me-2"></i>Ver ejemplo
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-function h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">Dashboard Interactivos</h3>
+                        <p>Creación de paneles de control profesionales.</p>
+                        <ul class="mt-2">
+                            <li>Tablas dinámicas avanzadas</li>
+                            <li>Gráficos interactivos</li>
+                            <li>Controles de formulario</li>
+                        </ul>
+                        <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#dashboardModal">
+                            <i class="bi bi-speedometer2 me-2"></i>Ver ejemplo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detalles ocultos -->
+        <div id="advancedDetails" class="mt-4 d-none">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="fw-bold">Contenido avanzado:</h4>
+                    <ul class="fs-5">
+                        <li>Creación y edición de macros con VBA</li>
+                        <li>Fórmulas matriciales avanzadas (CSE)</li>
+                        <li>Dashboard interactivos con controles</li>
+                        <li>Power Query para transformación de datos</li>
+                        <li>Power Pivot y modelo de datos</li>
+                        <li>Automatización de informes</li>
+                        <li>Integración con otras aplicaciones Office</li>
+                    </ul>
+                    <div class="alert alert-warning mt-3">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Requisito:</strong> Se recomienda dominar completamente los niveles básico e intermedio antes de abordar estos temas.
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-lightbulb-fill me-2"></i>
+                        <strong>Consejo profesional:</strong> Las habilidades avanzadas de Excel pueden aumentar significativamente tu valor en el mercado laboral.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artículos/Noticias -->
+    <section class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-newspaper text-success me-2"></i> Artículos Recientes</h2>
+            <a href="noticias.html" class="btn btn-outline-success">Ver todos los artículos</a>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 news-card">
+                    <img src="https://static.wixstatic.com/media/b28f10_52174cf0c59e42b78a14b48e7f241b9e~mv2.jpg/v1/fill/w_1200,h_1200,al_c/b28f10_52174cf0c59e42b78a14b48e7f241b9e~mv2.jpg" class="card-img-top responsive-img" alt="Errores comunes en Excel">
+                    <div class="card-body">
+                        <h5 class="card-title">Errores comunes al usar Excel y cómo evitarlos</h5>
+                        <p class="card-text">Descubre los errores más frecuentes que cometen los usuarios de Excel y aprende técnicas profesionales para evitarlos.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Básico</span>
+                            <a href="noticias.html#articulo1" class="btn btn-sm btn-outline-success">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 news-card">
+                    <img src="https://th.bing.com/th/id/R.4b3d76af7cafa644a2c7bee69baddbd9?rik=pDEALWA2kKgXMQ&pid=ImgRaw&r=0" class="card-img-top responsive-img" alt="Optimización en Excel">
+                    <div class="card-body">
+                        <h5 class="card-title">Optimiza tu productividad con estos trucos de Excel</h5>
+                        <p class="card-text">Trucos y atajos profesionales para aumentar tu productividad y reducir el tiempo en tareas repetitivas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning text-dark">Intermedio</span>
+                            <a href="noticias.html#articulo2" class="btn btn-sm btn-outline-success">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 news-card">
+                    <img src="https://www.semanalnews.com/wp-content/uploads/2023/10/image-4-1024x576.png" class="card-img-top responsive-img" alt="Novedades Excel 2025">
+                    <div class="card-body">
+                        <h5 class="card-title">Novedades en Excel 2025</h5>
+                        <p class="card-text">Explora las nuevas funciones y mejoras que Microsoft ha incluido en la última versión de Excel.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Avanzado</span>
+                            <a href="noticias.html#articulo3" class="btn btn-sm btn-outline-success">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlaces de interés -->
+    <section class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-collection-play text-success me-2"></i> Recursos de Aprendizaje</h2>
+            <a href="recursos.html" class="btn btn-outline-success">Ver todos los recursos</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-youtube text-danger me-2"></i> Video Tutorial: Funciones Básicas</h5>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/iG7Pruev84o" title="Tutorial Excel Básico" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-text">Aprende las 10 funciones básicas más importantes de Excel en este tutorial paso a paso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-geo-alt text-primary me-2"></i> Nuestro Centro de Capacitación</h5>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.5940034231458!2d-69.94873450304196!3d18.48588172346661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f362e578d3%3A0x19d59fe09af95898!2sUNPHU!5e0!3m2!1ses!2sdo!4v1718750000000!5m2!1ses!2sdo" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-text">Visítanos en nuestras instalaciones para recibir capacitación presencial personalizada.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-youtube text-danger me-2"></i> Tutorial: Tablas Dinámicas</h5>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/rpSAvYQfNeo?si=8E2NrukWoHHabv31" title="Tutorial Tablas Dinámicas" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-text">Tablas Dinámicas en Excel - Todo lo que necesitas saber.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-youtube text-danger me-2"></i> Introducción a VBA</h5>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/PvebpkrMG4o?si=MKS_cAXS_92DJRWR" title="Introducción a VBA" allowfullscreen></iframe>
+                        </div>
+                        <p class="card-text">Aprende Macros en Excel en Menos de 11 Minutos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="container my-5" id="contacto">
+        <h2 class="text-center mb-4 fw-bold"><i class="bi bi-envelope-paper text-success me-2"></i> Contacto</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" required placeholder="Ingresa tu nombre completo">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" required placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nivel de interés</label>
+                                <select class="form-select">
+                                    <option>Básico</option>
+                                    <option>Intermedio</option>
+                                    <option>Avanzado</option>
+                                    <option>Personalizado</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <textarea class="form-control" rows="4" required placeholder="Describe tu consulta o interés..."></textarea>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="submit" class="btn btn-success px-4">
+                                    <i class="bi bi-send me-2"></i>Enviar mensaje
+                                </button>
+                                <a href="mailto:jemd@excelizate.com?subject=Consulta%20sobre%20cursos&body=Hola,%20me%20interesa%20saber%20más%20sobre..." class="btn btn-outline-success">
+                                    <i class="bi bi-envelope me-2"></i> Email directo
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Excelízate</h5>
+                    <p>Curso profesional desde cero hasta nivel avanzado. Domina Excel y aumenta tu productividad.</p>
+                    <div class="d-flex">
+                        <button id="footerDarkModeToggle" class="btn btn-sm btn-outline-light me-2">
+                            <i class="bi bi-moon-fill"></i> Modo
+                        </button>
+                        <span class="privacy-link btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                            <i class="bi bi-shield-lock"></i> Privacidad
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white hover-effect">Inicio</a></li>
+                        <li class="mb-2"><a href="index.html#basico" class="text-white hover-effect">Nivel Básico</a></li>
+                        <li class="mb-2"><a href="index.html#intermedio" class="text-white hover-effect">Nivel Intermedio</a></li>
+                        <li class="mb-2"><a href="index.html#avanzado" class="text-white hover-effect">Nivel Avanzado</a></li>
+                        <li class="mb-2"><a href="noticias.html" class="text-white hover-effect">Noticias</a></li>
+                        <li class="mb-2"><a href="recursos.html" class="text-white hover-effect">Recursos</a></li>
+                        <li><a href="contacto.html" class="text-white hover-effect">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Redes sociales</h5>
+                    <div class="mb-3">
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white social-icon me-3"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="text-white social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <h5>Newsletter</h5>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Tu email">
+                        <button class="btn btn-success" type="button">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2025 Excelízate - Todos los derechos reservados | <span class="privacy-link" data-bs-toggle="modal" data-bs-target="#privacyModal">Políticas de privacidad</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <button class="btn btn-success rounded-circle p-3 shadow" data-bs-toggle="tooltip" title="¿Necesitas ayuda?" id="helpBtn">
+            <i class="bi bi-question-lg fs-4"></i>
+        </button>
+    </div>
+
+    <div class="modal fade" id="introModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-play-circle text-success me-2"></i>Introducción al curso de Excelízate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/iG7Pruev84o" title="Introducción Excelízate" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#basico" class="btn btn-outline-success" data-bs-dismiss="modal">Ir al curso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="basicVideoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-1-circle text-success me-2"></i>Video Tutorial: Nivel Básico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/iG7Pruev84o" title="Tutorial Nivel Básico" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="pivotModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-table text-success me-2"></i>Tabla Dinámica Ejemplo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://cdn.exceltotal.com/2021/01/como-crear-una-tabla-dinamica-04.png" class="img-fluid rounded mb-3" alt="Tabla dinámica">
+                    <h5>¿Qué es una tabla dinámica?</h5>
+                    <p>Una tabla dinámica es una herramienta poderosa de Excel que te permite resumir, analizar, explorar y presentar datos. Puedes usarla para:</p>
+                    <ul>
+                        <li>Resumir grandes conjuntos de datos</li>
+                        <li>Analizar tendencias y patrones</li>
+                        <li>Comparar diferentes variables</li>
+                        <li>Crear informes dinámicos</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="macroModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-code-slash text-success me-2"></i>Ejemplo de Macro VBA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Este es un ejemplo simple de una macro que formatea una tabla:</p>
+                    <pre><code>Sub FormatearTabla()
+    ' Aplicar formato a los encabezados
+    Range("A1:D1").Font.Bold = True
+    Range("A1:D1").Interior.Color = RGB(146, 208, 80) ' Verde Excel
+    
+    ' Aplicar bordes a toda la tabla
+    Range("A1:D100").Borders.LineStyle = xlContinuous
+    
+    ' Ajustar el ancho de las columnas automáticamente
+    Columns("A:D").AutoFit
+    
+    ' Mostrar mensaje de finalización
+    MsgBox "Tabla formateada correctamente", vbInformation
+End Sub</code></pre>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        Para usar macros, debes habilitar el editor de Visual Basic (Alt+F11) y habilitar las macros en las opciones de Excel.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="powerQueryModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-database text-success me-2"></i>Power Query Demo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://learn.microsoft.com/es-es/power-query/images/whatispowerquery.png" class="img-fluid rounded mb-3" alt="Power Query">
+                    <h5>¿Qué es Power Query?</h5>
+                    <p>Power Query es una herramienta de transformación de datos que te permite:</p>
+                    <ul>
+                        <li>Importar datos de múltiples fuentes (Excel, CSV, bases de datos, web, etc.)</li>
+                        <li>Limpiar y transformar datos de manera eficiente</li>
+                        <li>Automatizar procesos de preparación de datos</li>
+                        <li>Crear flujos de trabajo reproducibles</li>
+                    </ul>
+                    <p>Power Query está integrado en Excel (desde 2016) como "Obtener y Transformar Datos".</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="powerPivotModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-diagram-3 text-success me-2"></i>Power Pivot y Modelo de Datos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://comoseconfigura.es/wp-content/uploads/2023/08/como-usar-power-pivot-en-excel-tutorial-completo-aprende-como-analizar-y-sacar-conclusiones-de-tus-datos-1-768x448.png" class="img-fluid rounded mb-3" alt="Power Pivot">
+                    <h5>Características principales:</h5>
+                    <ul>
+                        <li>Manejo de millones de filas de datos</li>
+                        <li>Creación de relaciones entre tablas</li>
+                        <li>Uso de DAX (Data Analysis Expressions)</li>
+                        <li>Creación de medidas avanzadas</li>
+                        <li>Análisis de datos complejos</li>
+                    </ul>
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        Power Pivot no viene activado por defecto en Excel, debes habilitarlo en los complementos.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dashboardModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-speedometer2 text-success me-2"></i>Dashboard Interactivo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://bmfschool.com/wp-content/uploads/2023/01/Power-BI-Dashboard.webp" class="img-fluid rounded mb-3" alt="Dashboard Excel">
+                    <h5>Elementos de un buen dashboard:</h5>
+                    <ol>
+                        <li><strong>Visualizaciones claras:</strong> Gráficos adecuados al tipo de datos</li>
+                        <li><strong>Interactividad:</strong> Filtros y segmentaciones de datos</li>
+                        <li><strong>Jerarquía visual:</strong> Información más importante más destacada</li>
+                        <li><strong>Consistencia:</strong> Mismo estilo y colores en todo el dashboard</li>
+                        <li><strong>Performance:</strong> Optimizado para no ralentizar Excel</li>
+                    </ol>
+                    <p>Un buen dashboard permite tomar decisiones rápidas basadas en datos.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-shield-lock text-success me-2"></i>Política de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>1. Información que recopilamos</h4>
+                    <p>Recopilamos información cuando te registras en nuestro sitio, completas formularios o participas en nuestros cursos. Esta información puede incluir:</p>
+                    <ul>
+                        <li>Nombre y apellido</li>
+                        <li>Dirección de correo electrónico</li>
+                        <li>Número de teléfono (opcional)</li>
+                        <li>Información sobre tu nivel de Excel</li>
+                        <li>Datos de interacción con nuestro sitio</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">2. Uso de la información</h4>
+                    <p>La información recopilada puede ser usada para:</p>
+                    <ul>
+                        <li>Personalizar tu experiencia de aprendizaje</li>
+                        <li>Mejorar nuestro sitio web y cursos</li>
+                        <li>Enviar correos periódicos con información relevante</li>
+                        <li>Contactarte para encuestas o promociones (si aceptaste)</li>
+                        <li>Proveer soporte técnico</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">3. Protección de la información</h4>
+                    <p>Implementamos una variedad de medidas de seguridad para mantener la seguridad de tu información personal:</p>
+                    <ul>
+                        <li>Uso de protocolos seguros (HTTPS/SSL)</li>
+                        <li>Encriptación de datos sensibles</li>
+                        <li>Acceso restringido a información personal</li>
+                        <li>Actualizaciones periódicas de nuestros sistemas</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">4. Cookies</h4>
+                    <p>Nuestro sitio utiliza cookies para:</p>
+                    <ul>
+                        <li>Recordar tus preferencias (como el modo oscuro)</li>
+                        <li>Mejorar la velocidad y performance del sitio</li>
+                        <li>Recopilar datos analíticos anónimos</li>
+                    </ul>
+                    <p>Puedes desactivar las cookies en la configuración de tu navegador, pero algunas funciones del sitio podrían no funcionar correctamente.</p>
+                    
+                    <h4 class="mt-4">5. Divulgación a terceros</h4>
+                    <p>No vendemos, comercializamos ni transferimos de ninguna manera tu información personal a terceros sin tu consentimiento, excepto cuando sea necesario para:</p>
+                    <ul>
+                        <li>Cumplir con la ley o requerimientos legales</li>
+                        <li>Proteger nuestros derechos o propiedad</li>
+                        <li>Proveer servicios que hayas solicitado</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">6. Consentimiento</h4>
+                    <p>Al usar nuestro sitio, aceptas nuestra política de privacidad.</p>
+                    
+                    <h4 class="mt-4">7. Cambios a nuestra política de privacidad</h4>
+                    <p>Nos reservamos el derecho de modificar esta política en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio.</p>
+                    
+                    <div class="alert alert-info mt-4">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        <strong>Última actualización:</strong> 07 de julio, 2025
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Modo oscuro
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const footerDarkModeToggle = document.getElementById('footerDarkModeToggle');
+        
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            const footerIcon = footerDarkModeToggle.querySelector('i');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+                footerIcon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+                darkModeToggle.textContent = ' Modo Claro';
+                footerDarkModeToggle.textContent = ' Modo Claro';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+                footerIcon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+                darkModeToggle.textContent = ' Modo Oscuro';
+                footerDarkModeToggle.textContent = ' Modo Oscuro';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        footerDarkModeToggle.addEventListener('click', toggleDarkMode);
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Modo Claro';
+            footerDarkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Modo Claro';
+        }
+        function showDetails(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('d-none');
+            
+            const button = event.target;
+            if (element.classList.contains('d-none')) {
+                button.textContent = 'Ver detalles completos';
+            } else {
+                button.textContent = 'Ocultar detalles';
+            }
+        }
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Por favor ingresa un email válido');
+            } else {
+                const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                modal.show();
+                this.reset();
+            }
+        });
+        document.querySelectorAll('.copiar-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const formula = this.parentElement.querySelector('code').textContent;
+                navigator.clipboard.writeText(formula).then(() => {
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = '<i class="bi bi-check2"></i> Copiado!';
+                    this.classList.add('btn-success');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Error al copiar: ', err);
+                    alert('No se pudo copiar la fórmula');
+                });
+            });
+        });
+        const helpBtn = document.getElementById('helpBtn');
+        new bootstrap.Tooltip(helpBtn);
+        helpBtn.addEventListener('click', function() {
+            window.location.href = "contacto.html";
+        });
+
+        // Mostrar alerta después de 10 segundos
+        setTimeout(() => {
+            if (!sessionStorage.getItem('alertShown')) {
+                const alerta = document.createElement('div');
+                alerta.className = 'alert alert-info alert-dismissible fade show position-fixed bottom-0 start-0 m-3';
+                alerta.style.maxWidth = '350px';
+                alerta.style.zIndex = '1100';
+                alerta.innerHTML = `
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong><i class="bi bi-question-circle-fill me-2"></i>¿Necesitas ayuda?</strong> 
+                    <p class="mb-0 mt-2">Visita nuestra sección de contacto o haz clic en el botón de ayuda.</p>
+                `;
+                document.body.appendChild(alerta);
+                
+                // Cerrar alerta después de 15 segundos
+                setTimeout(() => {
+                    bootstrap.Alert.getOrCreateInstance(alerta).close();
+                }, 15000);
+                
+                sessionStorage.setItem('alertShown', 'true');
+            }
+        }, 10000);
+
+        // Efecto hover para elementos con clase hover-effect
+        document.querySelectorAll('.hover-effect').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+
+        // Inicializar todos los tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>
